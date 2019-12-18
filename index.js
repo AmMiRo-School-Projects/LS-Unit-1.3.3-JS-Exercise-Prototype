@@ -103,10 +103,10 @@ Car.prototype.drive = function(distance) {
 */
 function Baby(name, age, favoriteToy) {
   Person.call(this, name, age, favoriteToy);
-  this.name = name;
-  this.age = age;
   this.favoriteToy = favoriteToy;
 }
+
+Baby.prototype = Object.create(Person.prototype);
 
 Baby.prototype.play = function() {
   return `Playing with ${this.favoriteToy}`;
@@ -116,10 +116,10 @@ Baby.prototype.play = function() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. "this" is bound to the window/global object when its scope is global.
+  2. When "this" is called with "." notation, whatever is to the left of the "." is "this".
+  3. When "this" applied to a constructor, it is bound to the instance that is created and returned by the constructor.
+  4. "this" will be explicitly defined by either a ".call" or ".apply" method.
 */
 
 ///////// END OF CHALLENGE /////////
