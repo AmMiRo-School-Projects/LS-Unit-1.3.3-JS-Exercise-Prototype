@@ -86,7 +86,7 @@ Car.prototype.fill = function(gallons) {
 Car.prototype.drive = function(distance) {
   if (this.tank > distance / this.milesPerGallon) {
     this.odometer = this.odometer + distance;
-    this.tank = this.tank - distance / this.milesPerGallon;
+    this.tank -= distance / this.milesPerGallon;
   } else {
     this.odometer = this.odometer + this.tank * this.milesPerGallon;
     this.tank = 0;
